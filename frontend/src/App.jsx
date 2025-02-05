@@ -1,14 +1,24 @@
-import { Button } from '@chakra-ui/react'
+
 import React from 'react'
+import { Route, Routes } from 'react-router'
+import { Box } from "@chakra-ui/react"
+import HomePage from './Pages/HomePage'
+import CreatePage from './Pages/CreatePage'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div>
-      <h1>App Component</h1>
-      <Button>Click Me</Button>
-      <Button>Signup</Button>
+    <>
+   <Box minH={"100vh"}>
+    <Navbar />
+   <Routes>
+    <Route path='/'element={<HomePage />}/>
+    <Route path='/create'element={<CreatePage />}/>
+   </Routes>
+
+    </Box>  
   
-    </div>
+    </>
   )
 }
 
